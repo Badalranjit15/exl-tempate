@@ -20,6 +20,17 @@ inputs:
         - us-west-1
         - ca-central-1
         - eu-west-1
+        
+ instance_count:
+    type: string
+    description: Numbers of EC2 instances 
+    display_label: Numbers of EC2 instances
+    constraints:
+      - valid_values:
+        - 1
+        - 2
+        - 3
+        - 4
 
   instance_name:
     type: string
