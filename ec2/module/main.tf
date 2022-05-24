@@ -1,8 +1,10 @@
 module "ec2_instance" {
   source  = "terraform-aws-modules/ec2-instance/aws"
   version = "~> 3.0"
+  
+  count = "${var.instance_count}"
 
-  name = var.instance_name
+  name = "${var.instance_name}-${count.index}"
 
   ami           = var.ami_id == "" ? data.aws_ami.ubuntu.id : var.ami_id
   instance_type = var.instance_type
