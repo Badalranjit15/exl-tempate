@@ -37,3 +37,9 @@ variable "subnet_id" {
   type        = string
   description = "Subnet ID to place instance into"
 }
+
+variable "instace_count" {
+  type        = number
+  description = "Whether or not provided number"
+  default     = 1
+}
